@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Todolist from "./components/views/Todolist";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    darkMode: localStorage.getItem("darkMode")
+      ? JSON.parse(localStorage.getItem("darkMode"))
+      : true,
+  };
+
+  toggleColorMode = () => {
+    this.setState({
+      darkMode: !this.state.darkMode,
+    });
+    localStorage.setItem("darkMode", !this.state.darkMode);
+  };
+
+  render() {
+    document.body.style.background = this.state.darkMode
+      ? "#161722"
+      : "#e4e5f1";
+    return (
+      <div className={this.state.darkMode ? "App dark" : "App"}>
+        <Todolist
+          darkMode={this.state.darkMode}
+          toggleColorMode={this.toggleColorMode}
+        />
+      </div>
+    );
+  }
 }
 
 export default App;
