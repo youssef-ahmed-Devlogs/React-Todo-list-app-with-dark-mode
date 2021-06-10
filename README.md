@@ -1,6 +1,6 @@
 <h2>PROFESSIONAL TODOLIST REACT APP</h2>
 <p>I used in this project :  React js , Css, Feather Icons</p>
-<a href="https://react-todolist-complete.netlify.app/" target="_blank">Click Here For Live Preview</a> 
+<a href="https://react-todolist-complete.netlify.app/" target="blank">Click Here For Live Preview</a> 
 <br/>
 <br/>
 <img src="https://portfolioresumemy.netlify.app/images/react-todolist-app.jpg" />
